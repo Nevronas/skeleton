@@ -3,7 +3,7 @@ import argparse
 class Parser(object):
     def __init__(self):
         self.parser = argparse.ArgumentParser(description="")
-        
+
         self.parser.add_argument("--path",          default="./",         help="Base path of the project")
         self.parser.add_argument("--model",         default="./model/",   help="Path of the model file")
         self.parser.add_argument("--dataset",       default="./dataset/", help="Path of the dataset")
@@ -22,7 +22,6 @@ class Parser(object):
         self.parser.add_argument("--retrain",       default=False,        help="Retrain",                              type=self.str_to_bool)
         self.parser.add_argument("--load",          default =False,       help="Load model",                           type=self.str_to_bool,)
         
-        return self.parser
 
     def str_to_bool(self, text):
         return True if text.lower() == "true" else False
